@@ -16,3 +16,33 @@ poverty and increase quality of life.
 
 ## Problem Statement 
 There is a need to <u>detect the patterns</u> that are associated with fraud in Tunisia. However, there are <u>a lot of challenges</u> that complicate the detection of electricity and gas fraud. Therefore, we aim to <u>use Machine Learning algorithms</u> to detect and identify clients committing fraud against the Tunisia company of Electricity and Gas.
+
+## Dataset Analysis
+
+### Overview of Dataset
+
+Data was split across two csv files:
+
+```client.csv```:
+
+Each instance of the client csv file was unique to each client and contained relevant information with features such as client_id, region, creation_date and more importantly target (which classified the instance according to fraud or no fraud committed).
+
+```invoice.csv```:
+
+In the invoice csv file, each client could have multiple instances as identified by client_id and they contained invoice information with features such as invoice_date, counter_number, consumption_level, counter_type, old_index and new_index.
+
+### Problems With the Dataset
+**Heavily Imbalanced Dataset**
+
+![](./img/Heavily-Imbalanced-Dataset.png)
+
+
+
+**Unclear/Inconsistent Features**
+
+Multiple invoices share a client, labels associated with clients Consumption_level divided across different levels
+
+**Lacked Proper Test Set**
+
+Original dataset designed for competition Had to improvise and section out training set
+
