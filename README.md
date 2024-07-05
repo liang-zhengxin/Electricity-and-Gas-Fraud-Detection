@@ -46,3 +46,18 @@ Multiple invoices share a client, labels associated with clients Consumption_lev
 
 Original dataset designed for competition Had to improvise and section out training set
 
+
+## Feature Engineering
+```client_id, district, client_catg, region, region_group, creation_date_day, creation_date_month, creation_date_year, no_months_as_client, services_consumed, target, months_of_service, number_of_counter, number_of_instances, number_of_person_counting, min_reading_remark, max_reading_remark, mean_reading_remark, mean_difference_index, sum_difference_index, min_difference_index, max_difference_index, min_counter_statue, max_counter_statue, mean_counter_statue, mean_diff_counter_cofficient, sum_counter_coefficient, mean_counter_coefficient, min_counter_coefficient, max_counter_coefficient, sum_total_consumption, mean_total_consumption, min_total_consumption, max_total_consumption, tally_check_true, tally_check_false, sum_tally_value, min_tally_value, max_tally_value, mean_tally_value, counter_type, last_year, last_month, last_day, last_day_is_weekday```
+
+**Key Additions**
+
+- ```client_id```: To group all invoices done by the same client
+- min/max/mean/sum of various attributes (under the same client)
+- Last year/month/day
+- classified region into groups
+
+**Notes**
+
+- Fraud -> Positive, No Fraud -> Negative
+- Punish False Negatives over False Positives
